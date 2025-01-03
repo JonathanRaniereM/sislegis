@@ -1,0 +1,565 @@
+/* src/components/content/content.css */
+
+
+
+.content {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 2rem 4rem;
+
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    position: relative;
+  }
+  
+
+  
+  .content-left {
+    flex: 1;
+    min-width: 250px; /* Garante que a área não fique muito pequena */
+    
+  }
+  
+  .content-title {
+    font-size: 5rem;
+    font-family: 'Montserrat', sans-serif; /* Fonte destacada */
+    margin: 0;
+
+    font-weight: 700;
+  }
+  
+  .content-subtitle {
+    font-size: 3rem;
+    font-family: 'Arial', sans-serif; /* Fonte complementar */
+    margin-top: 0.5rem;
+  }
+  
+  .content-right {
+    flex: 1;
+    min-width: 250px;
+    position: relative; /* Para posicionar o gradiente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .content-gif {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px; /* Opcional: adicionar bordas arredondadas */
+    
+  }
+
+  
+  .content-right img {
+    position: relative;
+    border-radius: 20px;
+    z-index: 0; /* Coloca o GIF abaixo do gradiente */
+  }
+  
+  .content-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+  .icones-home {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    
+
+}
+
+.icon {
+    width: 20%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border: solid 1px #f0f0f0;  
+    box-shadow: 12px 12px 24px #BEBEBE, -12px -12px 24px #FFFFFF;  /* Sombra principal do efeito neumórfico mais acentuada */
+    text-align: center;
+    margin-top: 10%; /* Adicione um padding superior para posicionar os ícones mais para cima */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out, 
+                box-shadow 0.3s ease-out, 
+                transform 0.3s ease-out;
+}
+
+
+.icon:hover {
+    box-shadow: 8px 8px 16px #BEBEBE, -8px -8px 16px #FFFFFF; /* Reduz ligeiramente a sombra no hover para criar contraste */
+    transform: translateY(-5px) scale(1.02); 
+    background-color: #ECECEC; 
+}
+
+.icon svg {
+    color: #106B9B; /* Cor inicial do ícone */
+    font-size: 4rem; /* Tamanho inicial do ícone */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transições suaves para crescimento e mudança de cor */
+  }
+  
+  /* Efeito de hover para crescer e mudar a cor do ícone */
+  .icon:hover svg {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone em 20% */
+    color: #333; /* Nova cor do ícone ao passar o mouse */
+  }
+  
+  /* (Opcional) Estilos para o texto abaixo dos ícones */
+  .icon h2 {
+    color: #106B9B;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-top: 20%; /* Espaçamento acima do texto */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor do texto */
+  }
+
+  .icon:hover h2 {
+    color: #333; /* Nova cor do texto ao passar o mouse */
+  }
+  
+
+  .icon-description {
+    color: #333; /* Cor do texto descritivo */
+    font-family: 'Inter', sans-serif; /* Fonte 'Inter' */
+    font-size: 1rem; /* Tamanho da fonte */
+    margin-top: 10px; /* Espaçamento acima do texto */
+    text-align: center; /* Centraliza o texto */
+    line-height: 1.5; /* Espaçamento entre linhas para melhor legibilidade */
+    transition: color 0.3s ease; /* Transição suave para mudanças de cor */
+}
+
+
+.saiba-mais {
+  color: #333; /* Cor do texto */
+  font-family: 'Montserrat', sans-serif; /* Fonte 'Inter' */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  margin-top: 10px; /* Espaçamento acima do link */
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove a sublinhado padrão */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para cor e transformação */
+}
+
+/* Adiciona a setinha após o texto "Saiba mais" */
+.saiba-mais::after {
+  content: '>'; /* Setinha de redirecionamento */
+  margin-left: 5px; /* Espaçamento entre o texto e a setinha */
+  transition: transform 0.3s ease; /* Transição suave para a transformação da setinha */
+}
+
+/* Efeito de hover para o link "Saiba mais" */
+.icon:hover .saiba-mais {
+  color: #106B9B; /* Cor do texto ao passar o mouse */
+}
+
+/* Efeito de hover para a setinha */
+.icon:hover .saiba-mais::after {
+  transform: translateX(5px); /* Move a setinha para a direita ao passar o mouse */
+}
+
+
+.icon.active {
+  box-shadow: 8px 8px 16px #BEBEBE, -8px -8px 16px #FFFFFF;
+  transform: translateY(-5px) scale(1.02); 
+  background-color: #ECECEC; 
+}
+
+.icon.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25px; /* Espessura da borda */
+  background-color: #106B9B; /* Cor da borda */
+  border-bottom-left-radius: 10px; /* Bordas arredondadas */
+  border-bottom-right-radius: 10px;
+}
+
+.icon.active svg {
+  transform: scale(1.2);
+  color: #333;
+}
+
+.icon.active h2 {
+  color: #333;
+}
+
+/* Estilos para o texto descritivo no card ativo */
+
+.icon.active .saiba-mais {
+  color: #106B9B;
+}
+
+
+.active-frame {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 2px solid #106B9B;
+  transition: all 0.3s ease;
+}
+
+.frame-content {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.frame-images {
+  display: flex;
+  justify-content: center; /* Centraliza as imagens horizontalmente */
+  align-items: center;
+  background: transparent;
+  gap: 20px; /* Espaçamento entre as imagens */
+  flex-wrap: wrap; /* Permite que as imagens quebrem para uma nova linha em telas menores */
+  margin-bottom: 20px; /* Espaçamento abaixo do container de imagens */
+}
+
+/* Estilos para as imagens */
+.frame-images img {
+  width: 50%; /* Largura padrão das imagens */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 8px; /* Bordas arredondadas opcional */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.frame-images-image {
+  width: 50%; /* Largura padrão das imagens */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 8px; /* Bordas arredondadas opcional */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover nas imagens */
+.frame-images img:hover {
+  transform: scale(1.05); /* Aumenta ligeiramente a imagem */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+}
+
+
+.frame-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333333; /* Cor mais escura para maior contraste */
+}
+
+.frame-description {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: 'Arial', Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: left;
+  color: #555555; /* Cor branca foi alterada para cinza claro para melhor legibilidade */
+}
+
+
+.content-video {
+  margin-top: 5%;
+  width: 50%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 35px; /* Opcional: adicionar bordas arredondadas */
+  
+}
+
+
+.statistics-section {
+  background-color: #106B9B;
+  padding: 20px 20px 10px 0px;
+  margin-top: 3%;
+}
+
+.statistics-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.statistic-item {
+  text-align: center;
+  margin: 20px;
+}
+
+.statistic-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.statistic-description {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+}
+
+
+  /* Responsividade */
+  
+  /* Tablets */
+  @media (max-width: 1024px) {
+    .content {
+      padding: 1.5rem 3rem;
+    }
+  
+    .content-title {
+      font-size: 2.5rem;
+    }
+  
+    .content-subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .content-gif {
+      max-width: 350px;
+    }
+  }
+  
+  /* Notebooks e dispositivos menores */
+  @media (min-width: 768px) {
+    .content {
+      padding: 1rem 2rem;
+    }
+
+    .content-left {
+        flex: 1; /* Faz a parte esquerda um pouco mais larga (60%) */
+        align-items: flex-start;
+        justify-content: flex-end!important;
+        margin-left: 10%;
+    
+        color: #ffffff;
+        box-sizing: border-box;
+        
+    
+      }
+      .content-right {
+        flex: 0.7;
+        width: 100%;
+       
+        position: relative;
+        overflow: hidden;  
+        display: flex;  
+        justify-content: flex-start;
+        align-items: flex-start;  
+      }
+
+
+      .content-right {
+        position: relative; /* Assegura que o pseudo-elemento seja posicionado corretamente */
+    }
+  
+    
+  
+    .content-title {
+      font-size: 7rem;
+      color:#106B9B
+    }
+  
+    .content-subtitle {
+      font-size: 5rem;
+      color:#106B9B;
+      font-family: 'Arial', sans-serif; /* Fonte complementar */
+    }
+  
+    .content-gif {
+        width: 80%;
+        min-width: 80%; /* Define um tamanho máximo para o GIF */
+        min-height: 350px;
+        height: auto;
+        display: block;
+        border-radius: 8px; /* Opcional: adicionar bordas arredondadas */
+        
+      }
+  }
+
+  @media (max0-width: 1080px) {
+    .content {
+      padding: 1rem 2rem;
+    }
+
+    .content-left {
+        flex: 1; /* Faz a parte esquerda um pouco mais larga (60%) */
+    
+      }
+      .content-right {
+        flex: 0.7;
+        width: 100%;
+      }
+
+
+    
+    .content-title {
+      font-size: 7rem;
+    }
+  
+    .content-subtitle {
+      font-size: 5rem !important;
+    }
+  
+    .content-gif {
+        width: 80%;
+        min-width: 80%; /* Define um tamanho máximo para o GIF */
+        min-height: 550px;
+        height: auto;
+        display: block;
+        border-radius: 8px; /* Opcional: adicionar bordas arredondadas */
+        
+      }
+  }
+  
+  /* Celulares */
+  @media (max-width: 480px) {
+    .content {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 1rem;
+      text-align: center;
+
+      color: #ffffff;
+      flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+      position: relative;
+    }
+
+
+
+  
+    .content-left {
+      flex: 1;
+      min-width: 250px; /* Garante que a área não fique muito pequena */
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .content-right {
+      width: 100%;
+      position: relative;
+      max-height: 300px;  
+      overflow: hidden;  
+      display: flex;  
+      align-items: flex-start;  
+      border-radius: 8px;
+ 
+    }
+  
+    .content-title {
+      font-size: 2.2rem;
+      color:#106B9B
+    }
+  
+    .content-subtitle {
+      font-size: 1.2rem;
+      color:#106B9B
+    }
+  
+    .content-gif {
+      max-width: 100%;
+      min-width: 99%; /* Define um tamanho máximo para o GIF */
+      display: block; 
+      position: relative;  
+      
+
+    }
+
+
+
+
+    .icones-home {
+      width: 90%;
+      max-width: 500px;
+      gap: 6%;
+      margin-right: 6%;
+      
+  }
+  
+  .icon {
+      width: 18%;
+      height: 80px;
+
+  }
+  .icon svg {
+
+    font-size: 2rem; /* Tamanho inicial do ícone */
+  }
+
+  .icon h2 {
+    margin-top: 30%; /* Espaçamento acima do texto */
+    font-size: 0.8rem;
+  }
+
+  .active-frame {
+    width: 90%;
+    max-width: 700px;
+  }
+  
+
+
+  
+  /* Estilos para as imagens */
+  .frame-images img {
+    width: 80%; /* Largura padrão das imagens */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas opcional */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+
+  .frame-images-image {
+    width: 80%; /* Largura padrão das imagens */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas opcional */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .content-video {
+    width: 50%;
+    height: auto;
+    
+  }
+
+  .frame-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+  }
+  
+  .frame-description {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Arial', Arial, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #555555; /* Cor branca foi alterada para cinza claro para melhor legibilidade */
+  }
+
+
+  
+  
+
+  }
+  

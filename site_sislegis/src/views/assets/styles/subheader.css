@@ -1,0 +1,99 @@
+/* src/components/Header/assets/styles/subheader.css */
+
+.subheader {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Altura padrão para desktops */
+  background-image: url('../images/Plenario2.svg'); /* Caminho relativo para o SVG */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* Cor do texto branca para contraste com o fundo escurecido */
+  text-align: center;
+  margin-bottom: 30px; /* Espaçamento abaixo do subheader */
+}
+
+.subheader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Sobreposição preta semi-transparente */
+  z-index: 1;
+}
+
+.subheader-content {
+  position: relative;
+  z-index: 2; /* Garantir que o conteúdo fique acima da sobreposição */
+  max-width: 800px;
+  padding: 20px;
+}
+
+.subheader-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.subheader-description {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .subheader {
+    height: 250px;
+  }
+
+  .subheader-title {
+    font-size: 2em;
+  }
+
+  .subheader-description {
+    font-size: 1em;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .subheader {
+    height: 400px;
+  }
+
+}
+
+
+@media (min-width: 1080px) {
+  .subheader {
+    height: 500px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .subheader {
+    height: 250px;
+  }
+
+  .subheader::before {
+    background-color: rgba(0, 0, 0, 0.65); /* Sobreposição preta semi-transparente */
+  }
+
+  .subheader-title {
+    font-size: 1.5em;
+  }
+
+  .subheader-description {
+    font-size: 0.9em;
+  }
+}
