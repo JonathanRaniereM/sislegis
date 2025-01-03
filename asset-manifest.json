@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sislegis/static/css/main.59e7f7cb.css",
-    "main.js": "/sislegis/static/js/main.2aac7594.js",
+    "main.js": "/sislegis/static/js/main.3358f73b.js",
     "static/js/453.298e66e4.chunk.js": "/sislegis/static/js/453.298e66e4.chunk.js",
     "static/media/importacoes.mp4": "/sislegis/static/media/importacoes.5fe30e26bf8543495e0a.mp4",
     "static/media/Plenario2.svg": "/sislegis/static/media/Plenario2.503e12d691e5558fd499.svg",
@@ -21,11 +21,11 @@
     "static/media/OPERADOR.svg": "/sislegis/static/media/OPERADOR.4d406292251d8413bf020c348f735550.svg",
     "index.html": "/sislegis/index.html",
     "main.59e7f7cb.css.map": "/sislegis/static/css/main.59e7f7cb.css.map",
-    "main.2aac7594.js.map": "/sislegis/static/js/main.2aac7594.js.map",
+    "main.3358f73b.js.map": "/sislegis/static/js/main.3358f73b.js.map",
     "453.298e66e4.chunk.js.map": "/sislegis/static/js/453.298e66e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.59e7f7cb.css",
-    "static/js/main.2aac7594.js"
+    "static/js/main.3358f73b.js"
   ]
 }
